@@ -98,14 +98,17 @@ export default function Textbox() {
                 </div>
 
             </div>
-
-            <div className="d-grid gap-2 d-sm-flex justify-content-sm-center my-2 mb-4 ">
-                Text contains : {text.split(/\b\w+\b/g).length} words and {text.length} characters. <br />
-                {0.0032 * text.split(/\b\w+\b/g).length} Minutes read.
-            </div>
             <div className="container">
+            <div className="d-grid gap-2 d-sm-flex justify-content-sm-center my-2 mb-4 ">
+                Text contains : {text.length > 0 ? text.split(/\b\w+\b/g).length - 1 : 0} words and {text.length} characters. <br />
+                {text.length > 0 ? (0.003 * text.split(/\b\w+\b/g).length).toPrecision(3) : "0.000"} Minutes read.
+            </div>
+            
                 <h3>Preview of last entered text :</h3>
                 <p id='preview'>{text.length > 0 ? text : "Enter text to preview here..."}</p>
+                <br />
+                <br />
+                <br />
             </div>
         </>
     )
