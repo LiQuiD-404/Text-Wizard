@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Text-Wizard/static/css/main.bf95ce5c.css",
+    "main.js": "/Text-Wizard/static/js/main.578ecc4d.js",
+    "static/js/787.28cb0dcd.chunk.js": "/Text-Wizard/static/js/787.28cb0dcd.chunk.js",
+    "static/media/logo.svg": "/Text-Wizard/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Text-Wizard/index.html",
+    "main.bf95ce5c.css.map": "/Text-Wizard/static/css/main.bf95ce5c.css.map",
+    "main.578ecc4d.js.map": "/Text-Wizard/static/js/main.578ecc4d.js.map",
+    "787.28cb0dcd.chunk.js.map": "/Text-Wizard/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bf95ce5c.css",
+    "static/js/main.578ecc4d.js"
+  ]
+}
