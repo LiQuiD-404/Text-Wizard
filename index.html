@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body class="overflow-x-hidden">
+      <div class="hero h-96 w-screen bg-[url('../assets/hero.jpg')] bg-cover bg-center "></div>
+    <div class="container px-4 h-screen bg-gray-700">
+      <label for="tentacles">Enter a number:</label>
+      <form>
+        <input type="number" id="tentacles" />
+        <br />
+        <input type="submit" value="Submit!" onclick="hello(event)" />
+      </form>
+      <div class="test border-2 border-sky-500 h-6 w-44 text-white" id="result"></div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
