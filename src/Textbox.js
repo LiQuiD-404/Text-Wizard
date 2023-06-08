@@ -77,6 +77,43 @@ export default function Textbox() {
     function updatetext(event) {
         setText(event.target.value)
     }
+
+    async function txttospeech() {
+        // const url = 'https://voicerss-text-to-speech.p.rapidapi.com/?key=c8b196aaa9af45078134f6aea0e85a3e';
+        // const options = {
+        //     method: 'POST',
+        //     headers: {
+        //         'content-type': 'application/x-www-form-urlencoded',
+        //         'X-RapidAPI-Key': 'ff1a9da668msh796ad6921c2f3e3p119019jsn5cd9f7758a9a',
+        //         'X-RapidAPI-Host': 'voicerss-text-to-speech.p.rapidapi.com'
+        //     },
+        //     body: new URLSearchParams({
+        //         src: 'Hello World',
+        //         hl: 'en-us',
+        //         r: '0',
+        //         c: 'mp3',
+        //         f: '8khz_8bit_mono'
+        //     })
+        // };
+
+        // try {
+        //     const response = await fetch(url, options);
+        //     const result = await response.text();
+        //     console.log(result);
+        // } catch (error) {
+        //     console.error(error);
+        // }
+        if(text === ""){
+            alert("Enter some text for wizardry to begin...")
+        }
+        else{
+            const url_speech = `http://api.voicerss.org/?key=c8b196aaa9af45078134f6aea0e85a3e&hl=en-us&v=Mary&c=MP3&f=16khz_16bit_stereo&src=${text}`;
+            window.open(url_speech)
+        }
+        
+    }
+
+
     const [text, setText] = useState("");
     return (
         <>
@@ -93,17 +130,18 @@ export default function Textbox() {
                     <button class="btn btn-primary px-4 gap-3" id='tgl_btn' type="submit" onClick={togglecase}>ToggleCase</button>
                     <button class="btn btn-primary px-4 gap-3" id='spc_btn' type="submit" onClick={remove_extraspace}>Remove Extra Spaces</button>
                     <button class="btn btn-primary px-4 gap-3" id='cap_btn' type="submit" onClick={capitalize}>Auto Capitalize</button>
+                    <button class="btn btn-primary px-4 gap-3" id='cap_btn' type="submit" onClick={txttospeech}>Text To Speech</button>
                     <button class="btn btn-success px-4 gap-3" id='cpy_btn' type="submit" onClick={copy}>Copy to Clipboard</button>
                     <button class="btn btn-secondary px-4 gap-3" id='clr_btn' type="submit" onClick={clear}>Clear Textbox</button>
                 </div>
 
             </div>
             <div className="container">
-            <div className="d-grid gap-2 d-sm-flex justify-content-sm-center my-2 mb-4 ">
-                Text contains : {text.length > 0 ? text.split(/\b\w+\b/g).length - 1 : 0} words and {text.length} characters. <br />
-                {text.length > 0 ? (0.003 * text.split(/\b\w+\b/g).length).toPrecision(3) : "0.000"} Minutes read.
-            </div>
-            
+                <div className="d-grid gap-2 d-sm-flex justify-content-sm-center my-2 mb-4 ">
+                    Text contains : {text.length > 0 ? text.split(/\b\w+\b/g).length - 1 : 0} words and {text.length} characters. <br />
+                    {text.length > 0 ? (0.003 * text.split(/\b\w+\b/g).length).toPrecision(3) : "0.000"} Minutes read.
+                </div>
+
                 <h3>Preview of last entered text :</h3>
                 <p id='preview'>{text.length > 0 ? text : "Enter text to preview here..."}</p>
                 <br />
