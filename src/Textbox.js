@@ -79,30 +79,6 @@ export default function Textbox() {
     }
 
     async function txttospeech() {
-        // const url = 'https://voicerss-text-to-speech.p.rapidapi.com/?key=c8b196aaa9af45078134f6aea0e85a3e';
-        // const options = {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/x-www-form-urlencoded',
-        //         'X-RapidAPI-Key': 'ff1a9da668msh796ad6921c2f3e3p119019jsn5cd9f7758a9a',
-        //         'X-RapidAPI-Host': 'voicerss-text-to-speech.p.rapidapi.com'
-        //     },
-        //     body: new URLSearchParams({
-        //         src: 'Hello World',
-        //         hl: 'en-us',
-        //         r: '0',
-        //         c: 'mp3',
-        //         f: '8khz_8bit_mono'
-        //     })
-        // };
-
-        // try {
-        //     const response = await fetch(url, options);
-        //     const result = await response.text();
-        //     console.log(result);
-        // } catch (error) {
-        //     console.error(error);
-        // }
         if(text === ""){
             alert("Enter some text for wizardry to begin...")
         }
