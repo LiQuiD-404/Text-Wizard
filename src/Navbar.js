@@ -20,11 +20,9 @@ export default function Navbar() {
             document.getElementById('textbox-heading').style.color = "#FFFFFF"
             document.getElementById('textbox').style.color = "#FFFFFF"
             darkmode("Light Mode")
-            document.getElementById('uppr_btn').style.backgroundColor = '#121212'
-            document.getElementById('lwr_btn').style.backgroundColor = '#121212'
-            document.getElementById('tgl_btn').style.backgroundColor = '#121212'
-            document.getElementById('spc_btn').style.backgroundColor = '#121212'
-            document.getElementById('cap_btn').style.backgroundColor = '#121212'
+            for(let i=0;i<7;i++){
+                document.getElementsByClassName('blue_btn')[i].style.backgroundColor = '#121212'
+            }
             document.getElementById('cpy_btn').style.backgroundColor = '#121212'
             document.getElementById('clr_btn').style.backgroundColor = '#121212'
         }
@@ -38,11 +36,9 @@ export default function Navbar() {
             document.getElementById('textbox-heading').style.color = "#000000"
             document.getElementById('textbox').style.color = "#000000"
             darkmode("Dark Mode")
-            document.getElementById('uppr_btn').style.backgroundColor = '#0275d8'
-            document.getElementById('lwr_btn').style.backgroundColor = '#0275d8'
-            document.getElementById('tgl_btn').style.backgroundColor = '#0275d8'
-            document.getElementById('spc_btn').style.backgroundColor = '#0275d8'
-            document.getElementById('cap_btn').style.backgroundColor = '#0275d8'
+            for(let i=0;i<7;i++){
+                document.getElementsByClassName('blue_btn')[i].style.backgroundColor = '#0c6df5'
+            }
             document.getElementById('cpy_btn').style.backgroundColor = '#13ba55'
             document.getElementById('clr_btn').style.backgroundColor = '#7c8184'
         }
@@ -58,16 +54,10 @@ export default function Navbar() {
             document.getElementById('textbox-heading').style.backgroundColor = "#87CBB9"
             document.getElementById('textbox').style.color = "#577D86"
             limemode("Light Mode")
-            document.getElementById('uppr_btn').style.backgroundColor = '#569DAA'
-            document.getElementById('uppr_btn').style.borderColor = '#577D86'
-            document.getElementById('lwr_btn').style.backgroundColor = '#569DAA'
-            document.getElementById('lwr_btn').style.borderColor = '#577D86'
-            document.getElementById('tgl_btn').style.backgroundColor = '#569DAA'
-            document.getElementById('tgl_btn').style.borderColor = '#577D86'
-            document.getElementById('spc_btn').style.backgroundColor = '#569DAA'
-            document.getElementById('spc_btn').style.borderColor = '#577D86'
-            document.getElementById('cap_btn').style.backgroundColor = '#569DAA'
-            document.getElementById('cap_btn').style.borderColor = '#577D86'
+            for(let i=0;i<7;i++){
+                document.getElementsByClassName('blue_btn')[i].style.backgroundColor = '#569DAA' 
+                document.getElementsByClassName('blue_btn')[i].style.borderColor = '#577D86' 
+            }
             document.getElementById('cpy_btn').style.backgroundColor = '#569DAA'
             document.getElementById('cpy_btn').style.borderColor = '#577D86'
             document.getElementById('clr_btn').style.backgroundColor = '#569DAA'
@@ -83,16 +73,10 @@ export default function Navbar() {
             document.getElementById('textbox-heading').style.backgroundColor = "#FFFFFF"
             document.getElementById('textbox').style.color = "#000000"
             limemode("Lime Mode")
-            document.getElementById('uppr_btn').style.backgroundColor = '#0275d8'
-            document.getElementById('uppr_btn').style.borderColor = '#0275d8'
-            document.getElementById('lwr_btn').style.backgroundColor = '#0275d8'
-            document.getElementById('lwr_btn').style.borderColor = '#0275d8'
-            document.getElementById('tgl_btn').style.backgroundColor = '#0275d8'
-            document.getElementById('tgl_btn').style.borderColor = '#0275d8'
-            document.getElementById('spc_btn').style.backgroundColor = '#0275d8'
-            document.getElementById('spc_btn').style.borderColor = '#0275d8'
-            document.getElementById('cap_btn').style.backgroundColor = '#0275d8'
-            document.getElementById('cap_btn').style.borderColor = '#0275d8'
+            for(let i=0;i<7;i++){
+                document.getElementsByClassName('blue_btn')[i].style.backgroundColor = '#0c6df5' 
+                document.getElementsByClassName('blue_btn')[i].style.borderColor = '#0c6df5' 
+            }
             document.getElementById('cpy_btn').style.backgroundColor = '#13ba55'
             document.getElementById('cpy_btn').style.borderColor = '#13ba55'
             document.getElementById('clr_btn').style.backgroundColor = '#7c8184'
@@ -109,16 +93,10 @@ export default function Navbar() {
             document.getElementById('textbox-heading').style.backgroundColor = "#F8E8EE"
             document.getElementById('textbox').style.color = "#eba4be"
             cherrymode("Light Mode")
-            document.getElementById('uppr_btn').style.backgroundColor = '#F2BED1'
-            document.getElementById('uppr_btn').style.borderColor = '#F2BED1'
-            document.getElementById('lwr_btn').style.backgroundColor = '#F2BED1'
-            document.getElementById('lwr_btn').style.borderColor = '#F2BED1'
-            document.getElementById('tgl_btn').style.backgroundColor = '#F2BED1'
-            document.getElementById('tgl_btn').style.borderColor = '#F2BED1'
-            document.getElementById('spc_btn').style.backgroundColor = '#F2BED1'
-            document.getElementById('spc_btn').style.borderColor = '#F2BED1'
-            document.getElementById('cap_btn').style.backgroundColor = '#F2BED1'
-            document.getElementById('cap_btn').style.borderColor = '#F2BED1'
+            for(let i=0;i<7;i++){
+                document.getElementsByClassName('blue_btn')[i].style.backgroundColor = '#F2BED1' 
+                document.getElementsByClassName('blue_btn')[i].style.borderColor = '#F2BED1' 
+            }
             document.getElementById('cpy_btn').style.backgroundColor = '#F2BED1'
             document.getElementById('cpy_btn').style.borderColor = '#F2BED1'
             document.getElementById('clr_btn').style.backgroundColor = '#F2BED1'
@@ -133,16 +111,10 @@ export default function Navbar() {
             document.getElementById('textbox-heading').style.backgroundColor = "#FFFFFF"
             document.getElementById('textbox').style.color = "#000000"
             cherrymode("Cherry Mode")
-            document.getElementById('uppr_btn').style.backgroundColor = '#0275d8'
-            document.getElementById('uppr_btn').style.borderColor = '#0275d8'
-            document.getElementById('lwr_btn').style.backgroundColor = '#0275d8'
-            document.getElementById('lwr_btn').style.borderColor = '#0275d8'
-            document.getElementById('tgl_btn').style.backgroundColor = '#0275d8'
-            document.getElementById('tgl_btn').style.borderColor = '#0275d8'
-            document.getElementById('spc_btn').style.backgroundColor = '#0275d8'
-            document.getElementById('spc_btn').style.borderColor = '#0275d8'
-            document.getElementById('cap_btn').style.backgroundColor = '#0275d8'
-            document.getElementById('cap_btn').style.borderColor = '#0275d8'
+            for(let i=0;i<7;i++){
+                document.getElementsByClassName('blue_btn')[i].style.backgroundColor = '#0c6df5' 
+                document.getElementsByClassName('blue_btn')[i].style.borderColor = '#0c6df5' 
+            }
             document.getElementById('cpy_btn').style.backgroundColor = '#13ba55'
             document.getElementById('cpy_btn').style.borderColor = '#13ba55'
             document.getElementById('clr_btn').style.backgroundColor = '#7c8184'

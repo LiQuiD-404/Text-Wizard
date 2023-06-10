@@ -1,5 +1,4 @@
 
-
 import React, { useState } from 'react';
 
 export default function Textbox() {
@@ -32,10 +31,8 @@ export default function Textbox() {
     }
 
     function copy() {
-        const copyText = document.getElementById('textbox')
-        copyText.select();
-        copyText.setSelectionRange(0, 99999);
-        navigator.clipboard.writeText(copyText.value);
+        navigator.clipboard.writeText(text);
+        console.log(text)
 
     }
 
@@ -79,14 +76,62 @@ export default function Textbox() {
     }
 
     async function txttospeech() {
-        if(text === ""){
+        // const url = 'https://voicerss-text-to-speech.p.rapidapi.com/?key=c8b196aaa9af45078134f6aea0e85a3e';
+        // const options = {
+        //     method: 'POST',
+        //     headers: {
+        //         'content-type': 'application/x-www-form-urlencoded',
+        //         'X-RapidAPI-Key': 'ff1a9da668msh796ad6921c2f3e3p119019jsn5cd9f7758a9a',
+        //         'X-RapidAPI-Host': 'voicerss-text-to-speech.p.rapidapi.com'
+        //     },
+        //     body: new URLSearchParams({
+        //         src: 'Hello World',
+        //         hl: 'en-us',
+        //         r: '0',
+        //         c: 'mp3',
+        //         f: '8khz_8bit_mono'
+        //     })
+        // };
+
+        // try {
+        //     const response = await fetch(url, options);
+        //     const result = await response.text();
+        //     console.log(result);
+        // } catch (error) {
+        //     console.error(error);
+        // }
+        if (text === "") {
             alert("Enter some text for wizardry to begin...")
         }
-        else{
+        else {
             const url_speech = `http://api.voicerss.org/?key=c8b196aaa9af45078134f6aea0e85a3e&hl=en-us&v=Mary&c=MP3&f=16khz_16bit_stereo&src=${text}`;
             window.open(url_speech)
         }
-        
+
+    }
+
+    async function translate(language) {
+        if (text === "") {
+            alert("Enter some text for wizardry to begin...")
+        }
+        else{
+            const url = `https://translated-mymemory---translation-memory.p.rapidapi.com/get?langpair=en%7C${language}&q=${text}!&mt=1&onlyprivate=0&de=a%40b.c`;
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': 'ff1a9da668msh796ad6921c2f3e3p119019jsn5cd9f7758a9a',
+                    'X-RapidAPI-Host': 'translated-mymemory---translation-memory.p.rapidapi.com'
+                }
+            };
+
+            try {
+                const response = await fetch(url, options);
+                const result = await response.json();
+                setText(result.responseData.translatedText);
+            } catch (error) {
+                console.error(error);
+            }
+        }
     }
 
 
@@ -95,20 +140,33 @@ export default function Textbox() {
         <>
 
             <div className="container">
-                <div class="input-group">
-                    <span class="input-group-text" id='textbox-heading'>TextBox </span>
+                <div className="input-group">
+                    <span className="input-group-text" id='textbox-heading'>TextBox </span>
                     <textarea id='textbox' className="form-control" aria-label="With textarea" onChange={updatetext} placeholder="Enter a sentence or multiple paragraphs..." rows={4}></textarea>
                 </div>
                 <br />
                 <div className="container d-grid gap-2 d-flex flex-wrap justify-content-sm-center">
-                    <button class="btn btn-primary px-4 gap-3" id='uppr_btn' type="submit" onClick={uppercase}>Convert to UpperCase </button>
-                    <button class="btn btn-primary px-4 gap-3" id='lwr_btn' type="submit" onClick={lowercase}>Convert to LowerCase</button>
-                    <button class="btn btn-primary px-4 gap-3" id='tgl_btn' type="submit" onClick={togglecase}>ToggleCase</button>
-                    <button class="btn btn-primary px-4 gap-3" id='spc_btn' type="submit" onClick={remove_extraspace}>Remove Extra Spaces</button>
-                    <button class="btn btn-primary px-4 gap-3" id='cap_btn' type="submit" onClick={capitalize}>Auto Capitalize</button>
-                    <button class="btn btn-primary px-4 gap-3" id='cap_btn' type="submit" onClick={txttospeech}>Text To Speech</button>
-                    <button class="btn btn-success px-4 gap-3" id='cpy_btn' type="submit" onClick={copy}>Copy to Clipboard</button>
-                    <button class="btn btn-secondary px-4 gap-3" id='clr_btn' type="submit" onClick={clear}>Clear Textbox</button>
+                    <button className="btn btn-primary px-4 gap-3 blue_btn" type="submit" onClick={uppercase}>Convert to UpperCase </button>
+                    <button className="btn btn-primary px-4 gap-3 blue_btn" type="submit" onClick={lowercase}>Convert to LowerCase</button>
+                    <button className="btn btn-primary px-4 gap-3 blue_btn" type="submit" onClick={togglecase}>ToggleCase</button>
+                    <button className="btn btn-primary px-4 gap-3 blue_btn" type="submit" onClick={remove_extraspace}>Remove Extra Spaces</button>
+                    <button className="btn btn-primary px-4 gap-3 blue_btn" type="submit" onClick={capitalize}>Auto Capitalize</button>
+                    <button className="btn btn-primary px-4 gap-3 blue_btn" type="submit" onClick={txttospeech}>Text To Speech</button>
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle blue_btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Translate Text
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><button type="button" class="dropdown-item" onClick={() => translate('es')}>Translate to Spanish</button></li>
+                            <li><button type="button" class="dropdown-item" onClick={() => translate('fr')}>Translate to French</button></li>
+                            <li><button type="button" class="dropdown-item" onClick={() => translate('hi')}>Translate to Hindi</button></li>
+                            <li><button type="button" class="dropdown-item" onClick={() => translate('it')}>Translate to Italian</button></li>
+                            <li><button type="button" class="dropdown-item" onClick={() => translate('ja')}>Translate to Japanese</button></li>
+                            <li><button type="button" class="dropdown-item" onClick={() => translate('en')}>Translate to English</button></li>
+                        </ul>
+                    </div>
+                    <button className="btn btn-success px-4 gap-3" id='cpy_btn' type="submit" onClick={copy}>Copy to Clipboard</button>
+                    <button className="btn btn-secondary px-4 gap-3" id='clr_btn' type="submit" onClick={clear}>Clear Textbox</button>
                 </div>
 
             </div>
