@@ -12,9 +12,11 @@
   - Fixed precision of minutes read to 3 decimal places.
   - Added Text-to-Speech feature.
 - #### Update 10.06.2023
-  - Fixed the colour scheme of buttons in different themes
-  - Added Transalation to some languages
-  - More bug fixes   
+  - Fixed the color scheme of buttons in different themes
+  - Added Translation to some languages
+  - More bug fixes
+ - #### Update 17.06.2023
+  - Added Meet the Developer link.
 
   
   
