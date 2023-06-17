@@ -15,7 +15,7 @@
   - Fixed the color scheme of buttons in different themes
   - Added Translation to some languages
   - More bug fixes
- - #### Update 17.06.2023
+- #### Update 17.06.2023
   - Added Meet the Developer link.
 
   
